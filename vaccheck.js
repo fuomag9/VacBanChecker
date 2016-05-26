@@ -71,19 +71,33 @@ javascript:(function(){
 
             if (player.NumberOfVACBans || player.NumberOfGameBans) {
                 var text = '';
+                var check='';
 
-                if (player.NumberOfGameBans) {
+                if (player.NumberOfGameBans)
+                {
                     text += player.NumberOfGameBans + ' OW bans';
                 }
 
-                if (player.NumberOfVACBans) {
+                if (player.NumberOfVACBans)
+                {
                     text += (text === '' ? '' : ', ') +
                         player.NumberOfVACBans + ' VAC bans';
                 }
                 text += ' ' + player.DaysSinceLastBan + ' days ago.';
+                if (player.DaysSinceLastBan<=30) {
+                text='BANNED RECENTLY!!'  ;
+                check=true;
+                }
 
-                span.style.color = 'rgb(255, 73, 73)';
-                span.innerHTML = text;
+                if (check==true) {
+                  span.style.color = 'rgb(255,255,0)';
+                  span.innerHTML = text;
+                }
+                else {
+                  span.style.color = 'rgb(255, 73, 73)';
+                  span.innerHTML = text;
+                }
+
             } else {
                 span.style.color = 'rgb(43, 203, 64)';
                 span.innerHTML = 'No Bans for this player.';

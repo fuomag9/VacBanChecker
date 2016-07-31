@@ -117,7 +117,7 @@ javascript:(function(){
     function makeApiCall(ids) {
         var xmlHttp = new XMLHttpRequest();
         //API only allows 100 steam ids at once.
-        var endpointRoot = 'https://api.steampowered.com/ISteamUser/GetPlayerBans/v1/?key=12A1D1DE83F9932934EDD6DF2BA00463&steamids=';
+        var endpointRoot = 'https://api.steampowered.com/ISteamUser/GetPlayerBans/v1/?key=49DE901A7439CFFEFB63FC77A03B44E7&steamids=';
         var endpoint = endpointRoot + ids.join(',');
 
         xmlHttp.onreadystatechange = function() { onData(xmlHttp); };

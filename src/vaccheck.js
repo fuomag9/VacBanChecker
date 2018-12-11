@@ -13,6 +13,10 @@ var styles =
   'background-color:rgb(43, 203, 64);' +
 '}' +
 
+'.' + badgeClass + '.recente{' +
+  'background-color:rgb(255, 255, 0);' +
+'}' +
+
 // Friend pages
 '.friend_block_v2 .' + badgeClass + '{' +
   'display:block;' +
@@ -34,6 +38,13 @@ var styles =
   'top:0;' +
 '}' +
 
+'.friend_block_v2:hover .' + badgeClass + '.recente{' +
+  'color:rgb(0, 0, 0);' +
+  'height:100%;' +
+  'transform:rotate(0);' +
+  'top:0;' +
+'}' +
+
 // Group styles
 '.member_block .' + badgeClass + '{' +
   'display:block;' +
@@ -48,6 +59,12 @@ var styles =
 '}' +
 
 '.member_block .' + badgeClass + '.dirty:hover{' +
+  'color:rgb(255, 255, 255);' +
+  'width:100px;' +
+  'padding:2px;' +
+'}' +
+
+'.member_block .' + badgeClass + '.recente:hover{' +
   'color:rgb(255, 255, 255);' +
   'width:100px;' +
   'padding:2px;' +
@@ -74,8 +91,11 @@ function setVACStatus(player) {
     }
 
     inner += '<div>' + player.DaysSinceLastBan + ' days ago</div>';
+    if (player.DaysSinceLastBan<=30) {
+      span.classList.add('recente');
+    }else{
 
-    span.classList.add('dirty');
+    span.classList.add('dirty');}
     span.innerHTML = inner;
   } else {
     span.classList.add('clean');

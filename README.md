@@ -21,7 +21,7 @@ This bookmarklet also works under the other tabs on that page, including the "Al
 
 ### How to Install: Visual Instructions
 
-![Instructions](https://raw.githubusercontent.com/WillsonHaw/fuomag9/master/docs/instructions.gif)
+![Instructions](https://raw.githubusercontent.com/fuomag9/master/docs/instructions.gif)
 
 # Changelog
 
